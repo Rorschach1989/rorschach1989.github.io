@@ -1,7 +1,6 @@
 ---
 layout:     post
-title:      A note on the two sides of logistic regression:  
-Statistical vs Learning theoretical 
+title:      A note on the two sides of logistic regression <span style="color:blue">some *Statistical* text</span> vs Learning theoretical 
 mathjax:    true
 ---
 
