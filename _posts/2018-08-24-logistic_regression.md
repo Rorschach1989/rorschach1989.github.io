@@ -39,7 +39,7 @@ $$
     \mathcal{R}(f) = \mathbb{P}_{Y,X}\left( 1_{(Y \ne f(X))}\right) 
 \end{align}
 $$  
-We may recall in the study of linear regression, where $ \mathcal{Y} = \mathbb{R} $ and we pick the $ \ell_2 $ loss, we get an optimal predictor over all square integrable functions of $ X $ to be $ \mathbb{E}(Y|X) $, here we could also derive the optimal over all binary valued functions, the optimal predictor is [5, Theorem 2.1]:  
+We may recall in the study of linear regression, where $$ \mathcal{Y} = \mathbb{R} $$ and we pick the $$ \ell_2 $$ loss, we get an optimal predictor over all square integrable functions of $$ X $$ to be $$ \mathbb{E}(Y|X) $$, here we could also derive the optimal over all binary valued functions, the optimal predictor is [5, Theorem 2.1]:  
 $$
 \begin{align}
     f^*(x) = 1_{\left( \mathbb{P}(Y = 1 | X = x) > 1/2\right) }
@@ -50,4 +50,32 @@ Then...it seems the story is over, we've made a persuasive story that logistic r
 
 ## Breaking the conditional Bernoulli assumption
 
-Well, here's a very puzzling example, suppose $ Y $ is generated as 
+Well, here's a very puzzling example, suppose $$ Y $$ is generated as 
+$$
+\begin{align}\label{weird}
+    Y = 1_{\left( \langle \beta_0, X\rangle > 0 \right) }
+\end{align}
+$$  
+This model is indeed possible in practical, like the label is generated via a stable *rule*, and given $ X_i $s, we don't have additional randomness here.  
+This is a model that is extremely bad for statisticians, since $ \beta_0 $ is not identifiable. Moreover, even we want to use some joint modeling technique we would find that the corresponding likelihood equations are very uncomfortable to construct.  
+Okay, one may say that no one knows *a priori* what the model class would be exactly like, this reminds one of the notion of some kind of *robustness*, however for an unidentifiable model, it would be complicated to establish results about using ordinary techniques to tackle them.  
+Now let's stop worrying about the pessimistic side of the model, but some optimistic aspects  
+> If we find a $$ \hat{\beta}_n $$ that is (not necessary arbitrarily close to as $$ N $$ grows) close to $$ \beta_0 $$, chances are we are making a classifier with almost $$ 0 $$ classification error  
+
+If the above statement is achievable via some methods, we would be very happy as a practitioner, as long as we're not very much concerned about identifying the value of $$ \beta_0 $$, and this is why we need a *learning-theoretic* explanation of using logistic regression. And the answer to the previous case is pleasing: *we could simply use logistic regression to achieve this almost $ 0 $ classification error, with strong theoretical guarantees!*
+
+## A learning model  
+
+Here I adopt the approach from [7] and [2], see also a much richer review [3. The key fact here is that *analyzing logistic regression is not a trivial task in learning theory, at least in comparison to analyzing logistic regression in GLMs in statistics*. The analysis is a 2-stage procedure:  
+
+### Step 1
+
+We assume that we're able to solve a NP-Hard problem called empirical risk minimization w.r.t. $$ 0-1 $$ loss(Abbreviated ERM hereafter), and establish results about the minimizer  
+
+### Step 2
+
+We *relax* the ERM into a convex optimization problem (minimization with respect to logistic loss), and establish a property called *Fisher consistency* that guarantees using logistic regression is theoretically sound. We shall be very cautious here that the underlying model assumption could be completely wrong, so **the use of likelihood should be avoided**, although they're numerically equivalent, this methodological pitfall should be payed great attention by statisticians
+
+## ERM, PAC, and uniform law of large numbers
+
+First we list some basic ingredients, some of them are really an alias for statistical notions:
