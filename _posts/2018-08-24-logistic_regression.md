@@ -2,6 +2,7 @@
 layout:     post
 title:      A note on the two sides of logistic regression Statistical vs Learning theoretical 
 mathjax:    true
+author:     Ruofan Wu
 ---
 
 # A minimal set up
@@ -78,4 +79,31 @@ We *relax* the ERM into a convex optimization problem (minimization with respect
 
 ## ERM, PAC, and uniform law of large numbers
 
-First we list some basic ingredients, some of them are really an alias for statistical notions:
+First we list some basic ingredients, some of them are really an alias for statistical notions:  
+**ERM** is like M-estimator in asymptotic statistics, using the previous notation, to minimize a population level risk  
+$$
+\begin{align*}
+    \mathcal{R}(f) = \mathbb{P}_{Y,X}\left( l(Y, f(X))\right)
+\end{align*}
+$$  
+one may resort to the minimization of the empirical risk
+$$
+\begin{align*}
+    \mathcal{R}_n(f) = \mathbb{P}_n\left( l(Y, f(X))\right)
+\end{align*}
+$$  
+
+Where $$ \mathbb{P}_n $$ is the expectation w.r.t. empirical distribution on $$ (Y_i, X_i), i=1,\ldots,n $$. And the domain of variable $$ f $$ is usually called \emph{Hypothesis space}, we denote it by $$ \mathcal{F} $$, and the ERM problem is defined as:  
+$$
+\begin{align}
+    \hat{f}_n \in \arg\min_{f\in \mathcal{F}} \mathcal{R}_n(f)
+\end{align}
+$$  
+For the binary classification using linear classifier task, $$ \mathcal{F}_{\text{lin}} = \left\lbrace f | f = 1_{(\langle \beta, X\rangle > 0 )}, \beta \in \mathbb{R}^p \right\rbrace  $$.  
+**PAC** or **P**robably **A**pproximately **C**orrect, is an alternative characterization of *uniform Glivenko Cantelli* class [6, Chapter 10] with some involvement of ERM.. Originally proposed by Leslie Valiant in 1984 [9], this is a Turing award winning notion, and if we retrospect to 1980s, where the theory of empirical processes is just black magic known to a few of the probability masters like Rick Dudley. For characterizing the problem, I will not follow the 1984 paper but use the formulation in [7]: we say a hypothesis class $$ \mathcal{F} $$ is \emph{PAC-learnable} if for any *error* $$ \epsilon \in (0,1) $$ and any $$ \delta \in (0,1) $$, there exists a constant integer $$ m $$, only depends $$ \mathcal{F}, \epsilon, \delta $$ and denote it $$ m_{\mathcal{F}}(\epsilon, \delta) $$, such that there \emph{exists} an (learning) algorithm that, upon receiving $$ n > m_{\mathcal{F}}(\epsilon, \delta) $$ samples, the learning algorithm produces a result $$ \hat{f}_n $$ satisfying the event:
+$$
+\begin{align}\label{pac}
+    \mathcal{R}(\hat{f}_n) \le \inf_{f\in \mathcal{F}}\mathcal{R}(f) + \epsilon
+\end{align}
+$$  
+happens with probability greater than $$ 1-\delta $$, this $$ m_{\mathcal{F}}(\epsilon, \delta) $$ is referred to as **sample complexity**
