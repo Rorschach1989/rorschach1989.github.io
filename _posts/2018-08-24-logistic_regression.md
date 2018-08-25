@@ -119,7 +119,7 @@ happens with probability greater than $$ 1-\delta $$, this $$ m_{\mathcal{F}}(\e
 
 ### Realizable case
 
-now we quickly take a look at ($\ref{weird}$), here using the hypothesis class $$ \mathcal{F}_{\text{lin}} $$, we realize that $$ \inf_{f\in \mathcal{F}_{\text{lin}}}\mathcal{R}(f) = 0 $$, meaning that if $$ \mathcal{F}_{\text{lin}}$$ is PAC-learnable and we have the sample complexity $$ m_{\mathcal{F}_{\text{lin}}}(\epsilon, \delta) $$, than we can achieve arbitrary low error with high confidence with a sample size we're can calculate. This is a special case in learning theory called *realizable case* in [7]
+now we quickly take a look at (\ref{weird}), here using the hypothesis class $$ \mathcal{F}_{\text{lin}} $$, we realize that $$ \inf_{f\in \mathcal{F}_{\text{lin}}}\mathcal{R}(f) = 0 $$, meaning that if $$ \mathcal{F}_{\text{lin}}$$ is PAC-learnable and we have the sample complexity $$ m_{\mathcal{F}_{\text{lin}}}(\epsilon, \delta) $$, than we can achieve arbitrary low error with high confidence with a sample size we're can calculate. This is a special case in learning theory called *realizable case* in [7]
 
 ## ULLN & VC classes
 
@@ -162,7 +162,7 @@ $$
 **Fisher consistency of $$ \phi $$** characterizes the *correctness of using the convex surrogate $$ \phi $$* in that $$ \phi $$ is Fisher consistent for the $$ 0-1 $$ loss if for any sequence of measurable functions $$ f_n : \mathcal{X} \mapsto \mathbb{R} $$ and every distribution $$ \mathbb{P}_{X,Y} $$ defined on the sample space:  
 > $$ \mathcal{R}_{\phi}(f_n) \rightarrow \inf_{f\in \mathcal{F}}\mathcal{R}_{\phi}(f)  $$ implies that $$ \mathcal{R}(f_n) \rightarrow \inf_{f\in \mathcal{F}}\mathcal{R}(f) $$  
 
-Now the mission is clear, if we could somehow find a sufficient condition for $ \phi $ to be Fisher-consistent, than we need only verify it for logistic loss.  
+Now the mission is clear, if we could somehow find a sufficient condition for $$ \phi $$ to be Fisher-consistent, than we need only verify it for logistic loss.  
 > Here we suppress a step that the empirical surrogate risk minimizer is consistent, i.e.
 >
 $$
