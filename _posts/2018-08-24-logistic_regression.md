@@ -106,4 +106,26 @@ $$
     \mathcal{R}(\hat{f}_n) \le \inf_{f\in \mathcal{F}}\mathcal{R}(f) + \epsilon
 \end{align}
 $$  
-happens with probability greater than $$ 1-\delta $$, this $$ m_{\mathcal{F}}(\epsilon, \delta) $$ is referred to as **sample complexity**
+happens with probability greater than $$ 1-\delta $$, this $$ m_{\mathcal{F}}(\epsilon, \delta) $$ is referred to as **sample complexity**  
+
+### Realizable case
+
+now we quickly take a look at (\ref{weird}), here using the hypothesis class $$ \mathcal{F}_{\text{lin}} $$, we realize that $$ \inf_{f\in \mathcal{F}_{\text{lin}}}\mathcal{R}(f) = 0 $$, meaning that if $$ \mathcal{F}_{\text{lin}}$$ is PAC-learnable and we have the sample complexity $$ m_{\mathcal{F}_{\text{lin}}}(\epsilon, \delta) $$, than we can achieve arbitrary low error with high confidence with a sample size we're can calculate. This is a special case in learning theory called *realizable case* in [7]
+
+## ULLN & VC classes
+
+for PAC learnable classes, we throw directly the answer here that **ERM is a learning algorithm that satisfies the PAC condition (\ref{pac})**. If one's familiar with the consistency proof of MLE, especially the Wald-type argument like in [10], it's not hard to verify that it suffices to bound the uniform deviation  
+$$
+\begin{align}\label{ulln}
+    \sup_{f \in \mathcal{F}}\left( \mathbb{P}_n - \mathbb{P}\right)f 
+\end{align}
+$$  
+Actually it's easy to verify the inequality $$ \mathcal{R}(\hat{f}_n) -  \inf_{f\in \mathcal{F}}\mathcal{R}(f) \le 2\sup_{f \in \mathcal{F}}\left| \left( \mathbb{P}_n - \mathbb{P}\right)f \right|  $$  
+Moreover, since the sample complexity function required by PAC is independent of the generating distribution $$ \mathbb{P} $$, the argument (\ref{ulln}) should somehow be uniform over all probability distributions $$ \mathbb{P} \in \mathcal{P}  $$, where $$ \mathcal{P} $$ denotes the collection of all legal probability distributions on the sample space. For this to hold, we require $ \mathcal{F} $ to be a VC class, see for example, [6, Theorem 6.27]. In the textbook [7] the authors summarize these facts into a theorem referred as **fundamental theorem of machine learning**. In short, this theorem says that:  
+>A hypothesis class $$ \mathcal{F} $$ is PAC learnable $$ \Longleftrightarrow $$ $$ \mathcal{F} $$ is a VC class 
+\footnote{This is not a trivial result in empirical process theory, but note that decision functions for classification problems are uniformly bounded by $$ 1 $$, see a detailed discussion in Chapter 10 of [6], and ERM is guaranteed to produce the prediction rule  
+
+### Limitedness of PAC
+
+PAC is the most restrictive learning model in that the sample complexity is required to be independent of both the generating distribution $ \mathbb{P} $ and any specific points $$ f \in \mathcal{F} $$. For example most of the nonparametric regression schemes are not PAC since they adopt a class to approximate a very big function class (like $$ C_{[0,1]} $$) in a progressive way. There are methods for extending and relaxing the PAC assumption, while they are not of main concern here so I omit them}  
+
