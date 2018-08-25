@@ -2,4 +2,5 @@ theme: jekyll-theme-minimal
 markdown: kramdown
 links:
   about:
-    url: /about
+    title: About me
+    url: ./about.html
