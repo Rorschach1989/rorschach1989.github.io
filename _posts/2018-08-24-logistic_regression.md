@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Two aspects of logistic regression: Statistical vs Learning theoretical 
+title:      "Two aspects of logistic regression: Statistical vs Learning theoretical"
 mathjax:    true
 author:     Ruofan Wu
 ---
