@@ -1,14 +1,9 @@
 ---
 layout:     post
-title:      A note on the two sides of logistic regression Statistical vs Learning theoretical 
+title:      Two aspects of logistic regression: Statistical vs Learning theoretical 
 mathjax:    true
 author:     Ruofan Wu
 ---
-<!-- <script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-TeX: { equationNumbers: { autoNumber: "AMS" } }
-});
-</script> -->
 
 # Beginning of the story
 
