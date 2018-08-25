@@ -122,10 +122,21 @@ $$
 $$  
 Actually it's easy to verify the inequality $$ \mathcal{R}(\hat{f}_n) -  \inf_{f\in \mathcal{F}}\mathcal{R}(f) \le 2\sup_{f \in \mathcal{F}}\left| \left( \mathbb{P}_n - \mathbb{P}\right)f \right|  $$  
 Moreover, since the sample complexity function required by PAC is independent of the generating distribution $$ \mathbb{P} $$, the argument (\ref{ulln}) should somehow be uniform over all probability distributions $$ \mathbb{P} \in \mathcal{P}  $$, where $$ \mathcal{P} $$ denotes the collection of all legal probability distributions on the sample space. For this to hold, we require $ \mathcal{F} $ to be a VC class, see for example, [6, Theorem 6.27]. In the textbook [7] the authors summarize these facts into a theorem referred as **fundamental theorem of machine learning**. In short, this theorem says that:  
->A hypothesis class $$ \mathcal{F} $$ is PAC learnable $$ \Longleftrightarrow $$ $$ \mathcal{F} $$ is a VC class 
-\footnote{This is not a trivial result in empirical process theory, but note that decision functions for classification problems are uniformly bounded by $$ 1 $$, see a detailed discussion in Chapter 10 of [6], and ERM is guaranteed to produce the prediction rule  
+>A hypothesis class $$ \mathcal{F} $$ is PAC learnable $$ \Longleftrightarrow $$ $$ \mathcal{F} $$ is a VC class  
+
+This is not a trivial result in empirical process theory, but note that decision functions for classification problems are uniformly bounded by $$ 1 $$, see a detailed discussion in Chapter 10 of [6], and ERM is guaranteed to produce the prediction rule  
 
 ### Limitedness of PAC
 
 PAC is the most restrictive learning model in that the sample complexity is required to be independent of both the generating distribution $ \mathbb{P} $ and any specific points $$ f \in \mathcal{F} $$. For example most of the nonparametric regression schemes are not PAC since they adopt a class to approximate a very big function class (like $$ C_{[0,1]} $$) in a progressive way. There are methods for extending and relaxing the PAC assumption, while they are not of main concern here so I omit them}  
 
+So up till now, suppose we're able to solve ERM, we're able to build a "good" algorithm that at least asymptotically will lead us to the best risk we could achieve (Bayes risk), and if we want to make it precise how much sample point is needed (sample complexity), we shall analyze the rate of convergence of the supreme of empirical process, this is of huge effort. The renowned Vapnik-\v{C}hervonenkis inequality [3, Theorem 3.4]  tells us that the sample complexity would be of the order $$ O\left(  \dfrac{V + \log(1/\delta)}{\epsilon^2}\right)  $$, where $$ V $$ is the VC-dimension of $$  \mathcal{F} $$. The VC-dimension is actually VC-index $ -1 $, a very slight definition difference from van der Vaart and Wellner[11]. However, **ERM is not solvable, at least in reasonable time complexity**[1]  
+
+# Convex surrogates and Fisher consistency
+
+We didn't touch logistic regression in the ERM setting, and now we claim that \emph{logistic regression is asymptotically as good as ERM, but for finite sample we should pay some price for an "inexact" loss function}  
+
+## Convex surrogate losses
+
+I think the best way to characterize this concept is to use the graph in [2]  
+![My helpful screenshot]({{ "/assets/surrogate.jpg" | absolute_url }})
