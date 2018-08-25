@@ -3,6 +3,7 @@ layout:     post
 title:      "Two aspects of logistic regression: Statistical vs Learning theoretical"
 mathjax:    true
 author:     Ruofan Wu
+summary:    As a learning algorithm, logistic regression is much more nontrivial than a GLM
 ---
 
 # Beginning of the story
