@@ -67,7 +67,7 @@ $$
 \end{align}
 $$  
 This model is indeed possible in practical, like the label is generated via a stable *rule*, and given $ X_i $s, we don't have additional randomness here.  
-This is a model that is extremely bad for statisticians, since $ \beta_0 $ is not identifiable. Moreover, even we want to use some joint modeling technique we would find that the corresponding likelihood equations are very uncomfortable to construct.  
+This is a model that is extremely bad for statisticians, since $$ \beta_0 $$ is not identifiable. Moreover, even we want to use some joint modeling technique we would find that the corresponding likelihood equations are very uncomfortable to construct.  
 Okay, one may say that no one knows *a priori* what the model class would be exactly like, this reminds one of the notion of some kind of *robustness*, however for an unidentifiable model, it would be complicated to establish results about using ordinary techniques to tackle them.  
 Now let's stop worrying about the pessimistic side of the model, but some optimistic aspects  
 > If we find a $$ \hat{\beta}_n $$ that is (not necessary arbitrarily close to as $$ N $$ grows) close to $$ \beta_0 $$, chances are we are making a classifier with almost $$ 0 $$ classification error  
@@ -126,7 +126,7 @@ now we quickly take a look at (\ref{weird}), here using the hypothesis class $$ 
 for PAC learnable classes, we throw directly the answer here that **ERM is a learning algorithm that satisfies the PAC condition (\ref{pac})**. If one's familiar with the consistency proof of MLE, especially the Wald-type argument like in [10], it's not hard to verify that it suffices to bound the uniform deviation  
 $$
 \begin{align}\label{ulln}
-    \sup_{f \in \mathcal{F}}\left( \mathbb{P}_n - \mathbb{P}\right)f 
+    \sup_{f \in \mathcal{F}}\left( \mathbb{P}_n - \mathbb{P}\right)f
 \end{align}
 $$  
 Actually it's easy to verify the inequality $$ \mathcal{R}(\hat{f}_n) -  \inf_{f\in \mathcal{F}}\mathcal{R}(f) \le 2\sup_{f \in \mathcal{F}}\left| \left( \mathbb{P}_n - \mathbb{P}\right)f \right|  $$  
@@ -176,7 +176,7 @@ In fact [2, Theorem 1] gave a \emph{necessary and sufficient condition} called \
 
 ### Classification-calibrated functions
 
-First we make a conditioning argument on $ X $, so that  
+First we make a conditioning argument on $$ X $$, so that  
 $$
 \begin{align}
     &\mathbb{P}_{Y|X}\left( \phi(yf(X))| X = x\right) = \eta(x) \phi(f(x)) + (1-\eta(x))\phi(-f(x)), \notag \\
@@ -207,7 +207,7 @@ $$
     \psi \left( \mathcal{R}(f_n) - \inf_{f\in \mathcal{F}}\mathcal{R}(f)\right) \le \mathcal{R}_{\phi}(f_n) - \inf_{f\in \mathcal{F}}\mathcal{R}_{\phi}(f)
 \end{align}
 $$  
-While the precise definition of the $ \psi- $ transform involves elegant convex analysis, I recommend reading that paper for details  
+While the precise definition of the $$ \psi- $$ transform involves elegant convex analysis, I recommend reading that paper for details  
 
 # Wrap up
 
@@ -227,8 +227,8 @@ On the other hand, we're fully aware of what hypothesis class we are using ($$ \
 
 ## Learning theory and empirical processes
 
-it is regrettable for a statistician to not take a look at learning theory if he/she's been struggling many years on empirical processes. The main difference with what we use in our proofs is that van der Vaart and Wellners' book uses empirical processes mainly for proving asymptotic results, while learning theory emphasizes on \emph{finite sample results}, which leans toward the use of *concentration inequalities*. If you read [11] carefully, there's plenty of concentration results (and they are indeed the most useful ones) stated in Chapter 2, but in a somehow unfriendly way.  
-Recall that, [11] defined Orlitz norms before introducing Hoeffding's inequality... van der Vaart likes to stab right into the heart of the problem, while there still exist readers like me are not that smart...}
+it is regrettable for a statistician to not take a look at learning theory if he/she's been struggling many years on empirical processes. The main difference with what we use in our proofs is that van der Vaart and Wellners' book uses empirical processes mainly for proving asymptotic results, while learning theory emphasizes on \*finite sample results*, which leans toward the use of *concentration inequalities*. If you read [11] carefully, there's plenty of concentration results (and they are indeed the most useful ones) stated in Chapter 2, but in a somehow unfriendly way.  
+Recall that, [11] defined Orlitz norms before introducing Hoeffding's inequality... van der Vaart likes to stab right into the heart of the problem, while there still exist readers like me are not that smart...
 To this end, I found Roman Vershynin's new book [12] helpful and readable
 
 ## References
