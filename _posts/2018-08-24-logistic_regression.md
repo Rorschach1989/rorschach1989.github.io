@@ -13,9 +13,9 @@ The story originates from a chat with Mingzhe, on a case he encountered during h
 Let's avoid making the formulation too restrictive: we observe $$ n $$ i.i.d. data points, each contains a binary label $$ Y \in \mathcal{Y} = \{0,1\} $$ and a $$ p- $$ dimensional covariate $$ X \in \mathcal{X} \subset \mathbb{R}^p $$. We want to use some model to characterize the relation between $$ Y $$ and $$ X $$, with the help of the sample $$ (Y_i, X_i), i = 1,\ldots,n $$  
 The starting point of statisticians are simple, sleek and utterly convincing: \emph{Binary random variables are generated, were they are random, with some type of Bernoulli mechanism}. A Bernoulli variable $$ \xi \in \{0,1\} $$, using the mean parameter $$ \theta := \mathbb{P}(\xi = 1) \in (0,1) $$, is distributed with mass function  
 $$
-\begin{align}
+\begin{equation}
     \mathbb{P}(\xi) = \theta^\xi (1-\theta)^{(1-\xi)} = \exp\left\lbrace  \xi \log \left( \frac{\theta}{1 - \theta}\right) - \log\left( \frac{1}{1 - \theta}  \right)\right\rbrace
-\end{align}
+\end{equation}
 $$  
 the canonical parameter $$ \eta = \log (\frac{\theta}{1 - \theta}) $$ in the exponential family representation induced the \emph{logic link} in terms of GLM conventions. Note currently we haven't thought too much about the independent variables $$ X $$, but followed our instincts that $$ Y_i $$s are Bernoulli.\par
 The first step toward incorporating $$ X $$ into the model may be the concern that $$ Y_i $$s are not \emph{homogeneous}, or there may be some underlying relationship between $$ Y_i $$s and their corresponding $$ X_i $$s, great, now we have 2 choices:
@@ -113,18 +113,18 @@ happens with probability greater than $$ 1-\delta $$, this $$ m_{\mathcal{F}}(\e
 
 ### Realizable case
 
-now we quickly take a look at (\ref{weird}), here using the hypothesis class $$ \mathcal{F}_{\text{lin}} $$, we realize that $$ \inf_{f\in \mathcal{F}_{\text{lin}}}\mathcal{R}(f) = 0 $$, meaning that if $$ \mathcal{F}_{\text{lin}}$$ is PAC-learnable and we have the sample complexity $$ m_{\mathcal{F}_{\text{lin}}}(\epsilon, \delta) $$, than we can achieve arbitrary low error with high confidence with a sample size we're can calculate. This is a special case in learning theory called *realizable case* in [7]
+now we quickly take a look at ($\ref{weird}$), here using the hypothesis class $$ \mathcal{F}_{\text{lin}} $$, we realize that $$ \inf_{f\in \mathcal{F}_{\text{lin}}}\mathcal{R}(f) = 0 $$, meaning that if $$ \mathcal{F}_{\text{lin}}$$ is PAC-learnable and we have the sample complexity $$ m_{\mathcal{F}_{\text{lin}}}(\epsilon, \delta) $$, than we can achieve arbitrary low error with high confidence with a sample size we're can calculate. This is a special case in learning theory called *realizable case* in [7]
 
 ## ULLN & VC classes
 
-for PAC learnable classes, we throw directly the answer here that **ERM is a learning algorithm that satisfies the PAC condition (\ref{pac})**. If one's familiar with the consistency proof of MLE, especially the Wald-type argument like in [10], it's not hard to verify that it suffices to bound the uniform deviation  
+for PAC learnable classes, we throw directly the answer here that **ERM is a learning algorithm that satisfies the PAC condition ($\ref{pac}$)**. If one's familiar with the consistency proof of MLE, especially the Wald-type argument like in [10], it's not hard to verify that it suffices to bound the uniform deviation  
 $$
 \begin{align}\label{ulln}
     \sup_{f \in \mathcal{F}}\left( \mathbb{P}_n - \mathbb{P}\right)f 
 \end{align}
 $$  
 Actually it's easy to verify the inequality $$ \mathcal{R}(\hat{f}_n) -  \inf_{f\in \mathcal{F}}\mathcal{R}(f) \le 2\sup_{f \in \mathcal{F}}\left| \left( \mathbb{P}_n - \mathbb{P}\right)f \right|  $$  
-Moreover, since the sample complexity function required by PAC is independent of the generating distribution $$ \mathbb{P} $$, the argument (\ref{ulln}) should somehow be uniform over all probability distributions $$ \mathbb{P} \in \mathcal{P}  $$, where $$ \mathcal{P} $$ denotes the collection of all legal probability distributions on the sample space. For this to hold, we require $ \mathcal{F} $ to be a VC class, see for example, [6, Theorem 6.27]. In the textbook [7] the authors summarize these facts into a theorem referred as **fundamental theorem of machine learning**. In short, this theorem says that:  
+Moreover, since the sample complexity function required by PAC is independent of the generating distribution $$ \mathbb{P} $$, the argument ($\ref{ulln}$) should somehow be uniform over all probability distributions $$ \mathbb{P} \in \mathcal{P}  $$, where $$ \mathcal{P} $$ denotes the collection of all legal probability distributions on the sample space. For this to hold, we require $ \mathcal{F} $ to be a VC class, see for example, [6, Theorem 6.27]. In the textbook [7] the authors summarize these facts into a theorem referred as **fundamental theorem of machine learning**. In short, this theorem says that:  
 >A hypothesis class $$ \mathcal{F} $$ is PAC learnable $$ \Longleftrightarrow $$ $$ \mathcal{F} $$ is a VC class  
 
 This is not a trivial result in empirical process theory, but note that decision functions for classification problems are uniformly bounded by $$ 1 $$, see a detailed discussion in Chapter 10 of [6], and ERM is guaranteed to produce the prediction rule  
