@@ -1,11 +1,5 @@
 theme: jekyll-theme-minimal
 markdown: kramdown
 links:
-  - title: Home
-    url: /
-    external: false
-    icon: home
-  - title: about
+  about:
     url: /about
-  - title: Tags
-    url: /tags
