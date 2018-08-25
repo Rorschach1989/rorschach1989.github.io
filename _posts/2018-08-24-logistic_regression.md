@@ -198,4 +198,26 @@ $$
     \psi \left( \mathcal{R}(f_n) - \inf_{f\in \mathcal{F}}\mathcal{R}(f)\right) \le \mathcal{R}_{\phi}(f_n) - \inf_{f\in \mathcal{F}}\mathcal{R}_{\phi}(f)
 \end{align}
 $$  
-While the precise definition of the $ \psi- $ transform involves elegant convex analysis, I recommend reading that paper for details
+While the precise definition of the $ \psi- $ transform involves elegant convex analysis, I recommend reading that paper for details  
+
+# Wrap up
+
+## So far, so good
+
+Hopefully the above discussion has made myself clear about the legitimacy of using logistic regression, to briefly recap:
+
++ As long as there are presumed randomness in our data, using logistic regression is fine  
++ For statisticians, if the conditional Bernoulli assumption is indeed correct (I think this could be clarified in many cases), we're confident of applying this technique for all kinds of tasks, inferential or predictive  
++ For machine learning scientists, if we could forget about the precise significance of the model parameter and just make a black-box predictor, logistic regression is still theoretically sound
+
+## Practical cases
+
+when logistic regression (linear in input features) turns out to be a bad predictor, logistic assumption is indeed not to blame, as there's nothing more intuitive than it for binary data. Furthermore, checking the conditional Bernoulli assumption is difficult. This phenomenon was discussed by the ingenious Leo Breiman [4] on his highly influential, yet a little bit confrontational view on the statistician's way of modeling data. That paper is timelessly classic, a must read for every statistician, and see also the discussions by the world's greatest statisticians like D.R.Cox and Brad Efron on defense of elegant statistical modeling  
+
+On the other hand, we're fully aware of what hypothesis class we are using ($$ \mathcal{F}_{\text{lin}}$$), so one cause should be our *approximation error* is high, i.e. the Bayes risk is large. Then efforts should be made toward data mining for a larger and more expressive feature set. Another possibility is to make feature transformations to increase the approximation power in view of some function spaces (like using polynomials), both approaches bear the risk of blow up the complexity (i.e. VC-dimension) of the hypothesis class, this is essentially the bias-variance trade off
+
+## Learning theory and empirical processes
+
+it is regrettable for a statistician to not take a look at learning theory if he/she's been struggling many years on empirical processes. The main difference with what we use in our proofs is that van der Vaart and Wellners' book uses empirical processes mainly for proving asymptotic results, while learning theory emphasizes on \emph{finite sample results}, which leans toward the use of *concentration inequalities*. If you read [11] carefully, there's plenty of concentration results (and they are indeed the most useful ones) stated in Chapter 2, but in a somehow unfriendly way.  
+Recall that, [11] defined Orlitz norms before introducing Hoeffding's inequality... van der Vaart likes to stab right into the heart of the problem, while there still exist readers like me are not that smart...}
+To this end, I found Roman Vershynin's new book [12] helpful and readable
