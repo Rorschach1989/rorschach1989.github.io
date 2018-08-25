@@ -3,4 +3,4 @@ markdown: kramdown
 links:
   about:
     title: About me
-    url: ./about.html
+    url: /about.html
