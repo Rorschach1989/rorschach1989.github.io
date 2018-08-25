@@ -4,6 +4,12 @@ title:      A note on the two sides of logistic regression Statistical vs Learni
 mathjax:    true
 author:     Ruofan Wu
 ---
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+
 # Beginning of the story
 
 The story originates from a chat with Mingzhe, on a case he encountered during his work at Ant Financial, where a logistic regression approach seemed to be not adequate for a good prediction model, as a statistician he argued that the covariates were designed not carefully enough for a good fit and misspecification hurt the model, while his colleague had no idea what he was talking about, I think this funny situation of irreconcilability did imply a significant difference that's not merely misunderstanding of the model, but something deeper should be stated carefully so that we statisticians will be able to give some better explanation
