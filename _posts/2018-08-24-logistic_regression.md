@@ -130,13 +130,72 @@ This is not a trivial result in empirical process theory, but note that decision
 
 PAC is the most restrictive learning model in that the sample complexity is required to be independent of both the generating distribution $ \mathbb{P} $ and any specific points $$ f \in \mathcal{F} $$. For example most of the nonparametric regression schemes are not PAC since they adopt a class to approximate a very big function class (like $$ C_{[0,1]} $$) in a progressive way. There are methods for extending and relaxing the PAC assumption, while they are not of main concern here so I omit them}  
 
-So up till now, suppose we're able to solve ERM, we're able to build a "good" algorithm that at least asymptotically will lead us to the best risk we could achieve (Bayes risk), and if we want to make it precise how much sample point is needed (sample complexity), we shall analyze the rate of convergence of the supreme of empirical process, this is of huge effort. The renowned Vapnik-\v{C}hervonenkis inequality [3, Theorem 3.4]  tells us that the sample complexity would be of the order $$ O\left(  \dfrac{V + \log(1/\delta)}{\epsilon^2}\right)  $$, where $$ V $$ is the VC-dimension of $$  \mathcal{F} $$. The VC-dimension is actually VC-index $ -1 $, a very slight definition difference from van der Vaart and Wellner[11]. However, **ERM is not solvable, at least in reasonable time complexity**[1]  
+So up till now, suppose we're able to solve ERM, we're able to build a "good" algorithm that at least asymptotically will lead us to the best risk we could achieve (Bayes risk), and if we want to make it precise how much sample point is needed (sample complexity), we shall analyze the rate of convergence of the supreme of empirical process, this is of huge effort. The renowned Vapnik-\v{C}hervonenkis inequality [3, Theorem 3.4]  tells us that the sample complexity would be of the order $$ O\left(  \dfrac{V + \log(1/\delta)}{\epsilon^2}\right)  $$, where $$ V $$ is the VC-dimension of $$  \mathcal{F} $$. The VC-dimension is actually VC-index $$ -1 $$, a very slight definition difference from van der Vaart and Wellner[11]. However, **ERM is not solvable, at least in reasonable time complexity**[1]  
 
 # Convex surrogates and Fisher consistency
 
-We didn't touch logistic regression in the ERM setting, and now we claim that \emph{logistic regression is asymptotically as good as ERM, but for finite sample we should pay some price for an "inexact" loss function}  
+We didn't touch logistic regression in the ERM setting, and now we claim that l**ogistic regression is asymptotically as good as ERM, but for finite sample we should pay some price for an "inexact" loss function**
 
 ## Convex surrogate losses
 
 I think the best way to characterize this concept is to use the graph in [2]  
-![My helpful screenshot]({{ "/assets/surrogate.jpg" | absolute_url }})
+![The above graph shows several useful **convex surrogates** for the $ 0-1 $ loss in binary classification setting. ]({{ "/assets/surrogates.png" | absolute_url }})
+> Here the label space is altered as $$ \mathcal{Y} = \{-1, 1\} $$, so the logistic loss defined as $$ l_{\text{logistic}}(y,f(x)) = \log\left( 1 + \exp(-yf(x))\right)  $$ is equivalent to Bernoulli likelihood. In this graph, the loss function is further reduced in terms of input variables are associated with the loss via the product $$ yf(x) $$, thus the plot use representations like $$ \phi_{\text{logistic}}(\alpha) = \log\left( 1 + \exp(-\alpha)\right)  $$  
+
+Now with the change of loss function, we are facing with another risk minimization scheme called convex surrogate risk minimization, which again is an M-estimation: suppose we used a convex function $$ \phi: \mathbb{R} \mapsto [0, \infty) $$ to replace the $$ 0-1 $$ loss in a way that $$ l_{\phi}(y,f(x)) = \phi(yf(x)) $$, then it's trivial to define the corresponding surrogate risks:  
+$$
+\begin{align}
+    \mathcal{R}_{\phi}(f) &= \mathbb{P}_{Y,X}\left( \phi(Yf(X))\right) \\
+    \widehat{\mathcal{R}}_{\phi}(f) &= \mathbb{P}_n\left( \phi(Yf(X))\right)
+\end{align}
+$$  
+
+**Fisher consistency of $$ \phi $$** characterizes the *correctness of using the convex surrogate $$ \phi $$* in that $$ \phi $$ is Fisher consistent for the $$ 0-1 $$ loss if for any sequence of measurable functions $$ f_n : \mathcal{X} \mapsto \mathbb{R} $$ and every distribution $$ \mathbb{P}_{X,Y} $$ defined on the sample space:  
+> $$ \mathcal{R}_{\phi}(f_n) \rightarrow \inf_{f\in \mathcal{F}}\mathcal{R}_{\phi}(f)  $$ implies that $$ \mathcal{R}(f_n) \rightarrow \inf_{f\in \mathcal{F}}\mathcal{R}(f) $$  
+
+Now the mission is clear, if we could somehow find a sufficient condition for $ \phi $ to be Fisher-consistent, than we need only verify it for logistic loss.  
+> Here we suppress a step that the empirical surrogate risk minimizer is consistent, i.e.
+>
+$$
+\begin{align}
+    \mathcal{R}_{\phi}(\hat{f}^\phi_n) \overset{\mathbb{P}}{\rightarrow} \inf_{f\in \mathcal{F}}\mathcal{R}_{\phi}(f), \hat{f}^\phi_n = \arg\max_{f\in \mathcal{F}}\widehat{\mathcal{R}}_{\phi}(f)
+\end{align}
+$$  
+
+while for statisticians I think this is just M-estimation if you don't care too much about finite sample precisions, a combined result is in [2]
+In fact [2, Theorem 1] gave a \emph{necessary and sufficient condition} called \emph{classification-calibrated}, the definition is also kinda intuitive, but also sophisticated:
+
+### Classification-calibrated functions
+
+First we make a conditioning argument on $ X $, so that  
+$$
+\begin{align}
+    &\mathbb{P}_{Y|X}\left( \phi(yf(X))| X = x\right) = \eta(x) \phi(f(x)) + (1-\eta(x))\phi(-f(x)), \notag \\
+    &\eta(x) := \mathbb{P}_{Y,X}(Y=1| X=x)
+\end{align}
+$$  
+Then we drop the restriction on $ x $ by introducing:  
+$$
+\begin{align}
+    C_{\eta}(\alpha) = \eta \phi(\alpha) + (1 - \eta) \phi(-\alpha)
+\end{align}
+$$  
+We use $$ C_{\eta} $$ to further define 2 terms that measures somehow the "discriminative power" of $$ \phi $$  
+$$  
+\begin{align}
+    H(\eta) &= \inf_{\alpha \in \mathbb{R}} C_{\eta}(\alpha) \\
+    H^-(\eta) &= \inf_{\alpha: \alpha(2\eta - 1) \le 0}C_{\eta}(\alpha)
+\end{align}
+$$  
+The term $$ H(\eta) $$ is the "best risk" we could achieve, and $$ H^-(\eta) $$ is the "best risk" we could achieve *given our prediction is wrong*. One shall surely expect $$ H^-(\eta) $$ is always greater than $$ H(\eta) $$ except at $$ \eta = 1/2 $$ , and this is called \emph{classification-calibrated} property of $$ \phi $$  
+
+## Fisher consistency for logistic loss
+
+for investigating $$ \phi_{\text{logistic}}(\alpha) = \log\left( 1 + \exp(-\alpha)\right)  $$, easy calculus shows that $$ H(\eta) = \eta \log \dfrac{1}{\eta} + (1 - \eta) \log \dfrac{1}{1 - \eta} $$ and $$ H^-(\eta) \equiv \log2 $$, then Jensen's inequality implies $$ \phi_{\text{logistic}} $$ is classification calibrated. Cool, we're perfectly fine with logistic regression
+**Finite sample characterization** we've showed that asymptotically logistic regression would give us the best predictor, while for a more refined finite sample analysis, it's also possible to give a PAC-like characterization of convex surrogate problems. [2] used a notion of $$ \psi- $$ transform for relating the two excess risks in a way like  
+$$
+\begin{align}
+    \psi \left( \mathcal{R}(f_n) - \inf_{f\in \mathcal{F}}\mathcal{R}(f)\right) \le \mathcal{R}_{\phi}(f_n) - \inf_{f\in \mathcal{F}}\mathcal{R}_{\phi}(f)
+\end{align}
+$$  
+While the precise definition of the $ \psi- $ transform involves elegant convex analysis, I recommend reading that paper for details
