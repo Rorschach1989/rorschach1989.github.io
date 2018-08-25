@@ -30,7 +30,9 @@
         <p class="view"><a href="{{ site.github.owner_url }}">View My GitHub Profile</a></p>
         {% endif %}
 
-        <p class="view"><a href="./about.html">About me</a></p>
+        {% if site.links.about %}
+        <p class="view"><a href="{{ site.links.about.url }}">About me</a></p>
+        {% endif %}
 
         {% if site.show_downloads %}
         <ul class="downloads">
