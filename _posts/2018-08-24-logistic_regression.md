@@ -13,14 +13,17 @@ The story originates from a chat with Mingzhe, on a case he encountered during h
 ## A minimal set up
 
 Let's avoid making the formulation too restrictive: we observe $$ n $$ i.i.d. data points, each contains a binary label $$ Y \in \mathcal{Y} = \{0,1\} $$ and a $$ p- $$ dimensional covariate $$ X \in \mathcal{X} \subset \mathbb{R}^p $$. We want to use some model to characterize the relation between $$ Y $$ and $$ X $$, with the help of the sample $$ (Y_i, X_i), i = 1,\ldots,n $$  
-The starting point of statisticians are simple, sleek and utterly convincing: \emph{Binary random variables are generated, were they are random, with some type of Bernoulli mechanism}. A Bernoulli variable $$ \xi \in \{0,1\} $$, using the mean parameter $$ \theta := \mathbb{P}(\xi = 1) \in (0,1) $$, is distributed with mass function  
+The starting point of statisticians are simple, sleek and utterly convincing:  
+> Binary random variables are generated, were they are random, with some type of Bernoulli mechanism.  
+
+A Bernoulli variable $$ \xi \in \{0,1\} $$, using the mean parameter $$ \theta := \mathbb{P}(\xi = 1) \in (0,1) $$, is distributed with mass function  
 $$
 \begin{align}
     \mathbb{P}(\xi) = \theta^\xi (1-\theta)^{(1-\xi)} = \exp\left\lbrace  \xi \log \left( \frac{\theta}{1 - \theta}\right) - \log\left( \frac{1}{1 - \theta}  \right)\right\rbrace
 \end{align}
 $$  
-the canonical parameter $$ \eta = \log (\frac{\theta}{1 - \theta}) $$ in the exponential family representation induced the \emph{logic link} in terms of GLM conventions. Note currently we haven't thought too much about the independent variables $$ X $$, but followed our instincts that $$ Y_i $$s are Bernoulli.\par
-The first step toward incorporating $$ X $$ into the model may be the concern that $$ Y_i $$s are not \emph{homogeneous}, or there may be some underlying relationship between $$ Y_i $$s and their corresponding $$ X_i $$s, great, now we have 2 choices:
+the canonical parameter $$ \eta = \log (\frac{\theta}{1 - \theta}) $$ in the exponential family representation induced the *logic link* in terms of GLM conventions. Note currently we haven't thought too much about the independent variables $$ X $$, but followed our instincts that $$ Y_i $$s are Bernoulli.\par
+The first step toward incorporating $$ X $$ into the model may be the concern that $$ Y_i $$s are not *homogeneous*, or there may be some underlying relationship between $$ Y_i $$s and their corresponding $$ X_i $$s, great, now we have 2 choices:
 
 ### Choice 1
 
@@ -39,7 +42,7 @@ $$
 \end{align}
 $$  
 After this formulation statisticians are very happy, since via estimation via maximum likelihood, we obtain a $$ \sqrt{n}- $$consistent, and asymptotically efficient estimator $$ \hat{\beta}_n $$. We could make hypothesis testings, construct confidence intervals, we have tons of beautiful stories to say about $$ Y $$ given $$ X $$
-Among these stories maybe the one with much attention in practical is *prediction*, under which situation we shall evaluate our model via some metric, say \emph{classification error} if we use logistic regression to do classification. Here we shall state it clear about what we mean to "evaluate model with classification error": for any classification rule $$ f:  \mathcal{X} \mapsto \mathcal{Y} $$, the classification risk for rule $$ f $$ is defined as the expected loss with loss function chosen as the $$ 0-1 $$ loss, or  
+Among these stories maybe the one with much attention in practical is *prediction*, under which situation we shall evaluate our model via some metric, say *classification error* if we use logistic regression to do classification. Here we shall state it clear about what we mean to "evaluate model with classification error": for any classification rule $$ f:  \mathcal{X} \mapsto \mathcal{Y} $$, the classification risk for rule $$ f $$ is defined as the expected loss with loss function chosen as the $$ 0-1 $$ loss, or  
 $$
 \begin{align}
     \mathcal{R}(f) = \mathbb{P}_{Y,X}\left( 1_{(Y \ne f(X))}\right) 
@@ -62,13 +65,13 @@ $$
     Y = 1_{\left( \langle \beta_0, X\rangle > 0 \right) }
 \end{align}
 $$  
-This model is indeed possible in practical, like the label is generated via a stable *rule*, and given $ X_i $s, we don't have additional randomness here.  
+This model is indeed possible in practical, like the label is generated via a stable *rule*, and given $$ X_i $$s, we don't have additional randomness here.  
 This is a model that is extremely bad for statisticians, since $$ \beta_0 $$ is not identifiable. Moreover, even we want to use some joint modeling technique we would find that the corresponding likelihood equations are very uncomfortable to construct.  
 Okay, one may say that no one knows *a priori* what the model class would be exactly like, this reminds one of the notion of some kind of *robustness*, however for an unidentifiable model, it would be complicated to establish results about using ordinary techniques to tackle them.  
 Now let's stop worrying about the pessimistic side of the model, but some optimistic aspects  
 > If we find a $$ \hat{\beta}_n $$ that is (not necessary arbitrarily close to as $$ N $$ grows) close to $$ \beta_0 $$, chances are we are making a classifier with almost $$ 0 $$ classification error  
 
-If the above statement is achievable via some methods, we would be very happy as a practitioner, as long as we're not very much concerned about identifying the value of $$ \beta_0 $$, and this is why we need a *learning-theoretic* explanation of using logistic regression. And the answer to the previous case is pleasing: *we could simply use logistic regression to achieve this almost $ 0 $ classification error, with strong theoretical guarantees!*
+If the above statement is achievable via some methods, we would be very happy as a practitioner, as long as we're not very much concerned about identifying the value of $$ \beta_0 $$, and this is why we need a *learning-theoretic* explanation of using logistic regression. And the answer to the previous case is pleasing: *we could simply use logistic regression to achieve this almost $$ 0 $$ classification error, with strong theoretical guarantees!*
 
 ## A learning model  
 
@@ -98,14 +101,14 @@ $$
 \end{align*}
 $$  
 
-Where $$ \mathbb{P}_n $$ is the expectation w.r.t. empirical distribution on $$ (Y_i, X_i), i=1,\ldots,n $$. And the domain of variable $$ f $$ is usually called \emph{Hypothesis space}, we denote it by $$ \mathcal{F} $$, and the ERM problem is defined as:  
+Where $$ \mathbb{P}_n $$ is the expectation w.r.t. empirical distribution on $$ (Y_i, X_i), i=1,\ldots,n $$. And the domain of variable $$ f $$ is usually called **Hypothesis space**, we denote it by $$ \mathcal{F} $$, and the ERM problem is defined as:  
 $$
 \begin{align}
     \hat{f}_n \in \arg\min_{f\in \mathcal{F}} \mathcal{R}_n(f)
 \end{align}
 $$  
 For the binary classification using linear classifier task, $$ \mathcal{F}_{\text{lin}} = \left\lbrace f | f = 1_{(\langle \beta, X\rangle > 0 )}, \beta \in \mathbb{R}^p \right\rbrace  $$.  
-**PAC** or **P**robably **A**pproximately **C**orrect, is an alternative characterization of *uniform Glivenko Cantelli* class [6, Chapter 10] with some involvement of ERM.. Originally proposed by Leslie Valiant in 1984 [9], this is a Turing award winning notion, and if we retrospect to 1980s, where the theory of empirical processes is just black magic known to a few of the probability masters like Rick Dudley. For characterizing the problem, I will not follow the 1984 paper but use the formulation in [7]: we say a hypothesis class $$ \mathcal{F} $$ is \emph{PAC-learnable} if for any *error* $$ \epsilon \in (0,1) $$ and any $$ \delta \in (0,1) $$, there exists a constant integer $$ m $$, only depends $$ \mathcal{F}, \epsilon, \delta $$ and denote it $$ m_{\mathcal{F}}(\epsilon, \delta) $$, such that there \emph{exists} an (learning) algorithm that, upon receiving $$ n > m_{\mathcal{F}}(\epsilon, \delta) $$ samples, the learning algorithm produces a result $$ \hat{f}_n $$ satisfying the event:
+**PAC** or **P**robably **A**pproximately **C**orrect, is an alternative characterization of *uniform Glivenko Cantelli* class [6, Chapter 10] with some involvement of ERM.. Originally proposed by Leslie Valiant in 1984 [9], this is a Turing award winning notion, and if we retrospect to 1980s, where the theory of empirical processes is just black magic known to a few of the probability masters like Rick Dudley. For characterizing the problem, I will not follow the 1984 paper but use the formulation in [7]: we say a hypothesis class $$ \mathcal{F} $$ is **PAC-learnable** if for any *error* $$ \epsilon \in (0,1) $$ and any $$ \delta \in (0,1) $$, there exists a constant integer $$ m $$, only depends $$ \mathcal{F}, \epsilon, \delta $$ and denote it $$ m_{\mathcal{F}}(\epsilon, \delta) $$, such that there *exists* an (learning) algorithm that, upon receiving $$ n > m_{\mathcal{F}}(\epsilon, \delta) $$ samples, the learning algorithm produces a result $$ \hat{f}_n $$ satisfying the event:
 $$
 \begin{align}\label{pac}
     \mathcal{R}(\hat{f}_n) \le \inf_{f\in \mathcal{F}}\mathcal{R}(f) + \epsilon
@@ -168,7 +171,7 @@ $$
 $$  
 
 while for statisticians I think this is just M-estimation if you don't care too much about finite sample precisions, a combined result is in [2]
-In fact [2, Theorem 1] gave a \emph{necessary and sufficient condition} called \emph{classification-calibrated}, the definition is also kinda intuitive, but also sophisticated:
+In fact [2, Theorem 1] gave a *necessary and sufficient condition* called **classification-calibrated**, the definition is also kinda intuitive, but also sophisticated:
 
 ### Classification-calibrated functions
 
@@ -192,7 +195,7 @@ $$
     H^-(\eta) &= \inf_{\alpha: \alpha(2\eta - 1) \le 0}C_{\eta}(\alpha)
 \end{align}
 $$  
-The term $$ H(\eta) $$ is the "best risk" we could achieve, and $$ H^-(\eta) $$ is the "best risk" we could achieve *given our prediction is wrong*. One shall surely expect $$ H^-(\eta) $$ is always greater than $$ H(\eta) $$ except at $$ \eta = 1/2 $$ , and this is called \emph{classification-calibrated} property of $$ \phi $$  
+The term $$ H(\eta) $$ is the "best risk" we could achieve, and $$ H^-(\eta) $$ is the "best risk" we could achieve *given our prediction is wrong*. One shall surely expect $$ H^-(\eta) $$ is always greater than $$ H(\eta) $$ except at $$ \eta = 1/2 $$ , and this is called *classification-calibrated* property of $$ \phi $$  
 
 ## Fisher consistency for logistic loss
 
@@ -223,7 +226,7 @@ On the other hand, we're fully aware of what hypothesis class we are using ($$ \
 
 ### Learning theory and empirical processes
 
-it is regrettable for a statistician to not take a look at learning theory if he/she's been struggling many years on empirical processes. The main difference with what we use in our proofs is that van der Vaart and Wellners' book uses empirical processes mainly for proving asymptotic results, while learning theory emphasizes on \*finite sample results*, which leans toward the use of *concentration inequalities*. If you read [11] carefully, there's plenty of concentration results (and they are indeed the most useful ones) stated in Chapter 2, but in a somehow unfriendly way.  
+it is regrettable for a statistician to not take a look at learning theory if he/she's been struggling many years on empirical processes. The main difference with what we use in our proofs is that van der Vaart and Wellners' book uses empirical processes mainly for proving asymptotic results, while learning theory emphasizes on *finite sample results*, which leans toward the use of *concentration inequalities*. If you read [11] carefully, there's plenty of concentration results (and they are indeed the most useful ones) stated in Chapter 2, but in a somehow unfriendly way.  
 Recall that, [11] defined Orlitz norms before introducing Hoeffding's inequality... van der Vaart likes to stab right into the heart of the problem, while there still exist readers like me are not that smart...
 To this end, I found Roman Vershynin's new book [12] helpful and readable
 
