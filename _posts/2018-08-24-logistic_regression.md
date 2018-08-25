@@ -221,3 +221,18 @@ On the other hand, we're fully aware of what hypothesis class we are using ($$ \
 it is regrettable for a statistician to not take a look at learning theory if he/she's been struggling many years on empirical processes. The main difference with what we use in our proofs is that van der Vaart and Wellners' book uses empirical processes mainly for proving asymptotic results, while learning theory emphasizes on \emph{finite sample results}, which leans toward the use of *concentration inequalities*. If you read [11] carefully, there's plenty of concentration results (and they are indeed the most useful ones) stated in Chapter 2, but in a somehow unfriendly way.  
 Recall that, [11] defined Orlitz norms before introducing Hoeffding's inequality... van der Vaart likes to stab right into the heart of the problem, while there still exist readers like me are not that smart...}
 To this end, I found Roman Vershynin's new book [12] helpful and readable
+
+## References
+
+[1]. Arora, S., Babai, L., Stern, J., and Sweedyk, Z. The hardness of approximate optima in lattices, codes, and systems of linear equations. In Foundations of Computer Science, 1993. Proceedings., 34th Annual Symposium on (1993), IEEE, pp. 724–733.  
+[2]. Bartlett, P. L., Jordan, M. I., and McAuliffe, J. D. Convexity, classification, and risk bounds. Journal of the American Statistical Association 101, 473 (2006), 138–156.  
+[3]. Boucheron, S., Bousquet, O., and Lugosi, G. Theory of classification: A survey of some recent advances. ESAIM: probability and statistics 9 (2005), 323–375.  
+[4]. Breiman, L., et al. Statistical modeling: The two cultures (with comments and a rejoinder by the author). Statistical science 16, 3 (2001), 199–231.  
+[5]. Devroye, L., Györfi, L., and Lugosi, G. A probabilistic theory of pattern recognition, vol. 31. Springer Science & Business Media, 2013.  
+[6]. Dudley, R. M. Uniform Central Limit Theorems, 2nd ed. Cambridge University Press, Cambridge, 2014.  
+[7]. Shalev-Shwartz, S., and Ben-David, S. Understanding machine learning: From theory to algorithms. Cambridge university press, 2014.  
+[8]. Tsiatis, A. Semiparametric theory and missing data. Springer Science & Business Media, 2007.  
+[9]. Valiant, L. G. A theory of the learnable. Communications of the ACM 27, 11 (1984), 1134–1142.  
+[10]. Van der Vaart, A. W. Asymptotic statistics, vol. 3. Cambridge university press, 2000.  
+[11]. van der Vaart, A. W., and Wellner, J. A. Weak Convergence and Empirical Processes. Springer-Verlag, New York, 1996.  
+[12]. Vershynin, R. High-Dimensional Probability.
