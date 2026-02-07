@@ -1,447 +1,377 @@
 <!DOCTYPE html>
-<!-- saved from url=(0032)https://www.calpoly.edu/~dsun09/ -->
-<html lang="en"><head>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-G83ML563TJ"></script>
-	<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G83ML563TJ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G83ML563TJ');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ruofan Wu - Staff Machine Learning Engineer">
+    <meta name="author" content="Ruofan Wu">
+    <meta name="keywords" content="Ruofan Wu, AI, Machine Learning, Coupang, Fudan University">
 
-	gtag('config', 'G-G83ML563TJ');
-	</script>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="keywords" content="Ruofan Wu AI">
+    <title>Ruofan Wu | Machine Learning Engineer</title>
 
-    <!-- Note there is no responsive meta tag here -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
-    <!-- <link rel="shortcut icon" href="https://www.calpoly.edu/assets/ico/favicon.ico"> -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: #333;
+            background-color: #f8f9fa;
+            line-height: 1.6;
+        }
+        
+        /* Navbar Tweaks */
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            background-color: #fff;
+        }
+        .navbar-brand {
+            font-weight: 700;
+            color: #2c3e50;
+        }
 
-    <title>Ruofan Wu</title>
+        /* REPLACEMENT CSS for .profile-img */
+        .profile-img {
+            width: 100%;
+            max-width: 280px;
+            height: auto;
+            
+            /* REMOVED border and shadow */
+            border: none;
+            padding: 0;
+            box-shadow: none;
+            
+            /* This creates the "Fainted" / Feathered effect */
+            /* The image stays sharp in the center and fades out at the edges */
+            -webkit-mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
+            mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
+            
+            display: block;
+            margin: 0 auto 20px auto;
+        }
 
-    <!-- Bootstrap core CSS -->
-    <link href="./css/bootstrap.min.css" rel="stylesheet">
+        /* Section Headers */
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            font-size: 1.75rem;
+            font-weight: 600;
+        }
+        
+        /* Paper Lists */
+        .paper-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .paper-list li {
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 3px solid #dee2e6;
+            transition: border-color 0.3s;
+        }
+        .paper-list li:hover {
+            border-left-color: #0d6efd;
+        }
+        .paper-title {
+            font-weight: 600;
+            color: #0d6efd;
+            text-decoration: none;
+            display: block;
+        }
+        .paper-title:hover {
+            text-decoration: underline;
+        }
+        .author-list {
+            font-size: 0.95rem;
+            color: #555;
+        }
+        .venue {
+            font-style: italic;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        /* Links */
+        a {
+            text-decoration: none;
+            color: #0d6efd;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
 
-    <!-- Custom styles for this template -->
-    <link href="./css/non-responsive.css" rel="stylesheet">
-    <link href="./css/style.css" rel="stylesheet">
-  </head>
+        /* Footer */
+        footer {
+            margin-top: 60px;
+            padding: 30px 0;
+            background-color: #fff;
+            border-top: 1px solid #e9ecef;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+    </style>
+</head>
 
-  <body>
+<body>
 
-    <!-- Fixed navbar -->
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="https://rorschach1989.github.io/">Ruofan Wu</a> 
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Ruofan Wu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="#about">about</a></li>
-			<li><a href="#services">services</a></li>
-            <li><a href="#research">research</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-    
-	<div class="container">
-	<br>
-    <div class="page-header">
+    </nav>
 
-	<h2 id="about" style="padding-top: 60px; margin-top: -70px;">about me</h2>
+    <div class="container" style="margin-top: 100px;">
+        
+        <div id="about" class="row align-items-center">
+            <div class="col-md-4 text-center">
+                <img src="./assets/me.jpeg" alt="Ruofan Wu" class="profile-img">
+            </div>
+            <div class="col-md-8">
+                <h1 class="display-5 fw-bold">Ruofan Wu</h1>
+                <p class="lead text-muted">Staff Machine Learning Engineer at Coupang</p>
+                
+                <div class="mb-3">
+                    <a href="mailto:wuruofan1989@gmail.com" class="btn btn-outline-dark btn-sm me-2">
+                        <i class="fas fa-envelope"></i> Email Me
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=lvCtQUMAAAAJ" class="btn btn-outline-primary btn-sm me-2">
+                        <i class="fas fa-graduation-cap"></i> Google Scholar
+                    </a>
+                    <a href="https://github.com/rorschach1989" class="btn btn-outline-secondary btn-sm">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
 
-	<p> I am a staff machine learning engineer at Coupang, working on multi-modality foundation models. I am also broadly interested in trustworthy AI (privacy, fairness, robustness, etc) 
-		and graph-related machine learning topics.
-	</p>
-	
-	<p>
-	  I obtained my Ph.D. from <a href="https://www.fdsm.fudan.edu.cn/AboutUs/department.html">Department of statistics, Fudan University</a> in 2017,
-	  supervised by professor <a href="https://www.fdsm.fudan.edu.cn/AboutUs/preview.html?uid=011916">Ming Zheng</a> and 
-	  professor <a href="https://www.fdsm.fudan.edu.cn/AboutUs/preview.html?uid=012077">Wen Yu</a>, working on semiparametric statistics and survival analysis.
-	</p>
+                <p>
+                    My broad research interests include:
+                </p>
 
-	<p>
-	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	  wuruofan1989 (at) gmail.com
-	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	</p>
-    </div>
-	<br>
+				<ul class="mb-4">
+                    <li><strong>Agentic AI</strong></li>
+                    <li><strong>Multi-modality Foundation Models</strong></li>
+                    <li><strong>Graph Representation Learning and Relational Learning</strong></li>
+                    <li><strong>Trustworthy AI</strong> (Privacy, Robustness, Fairness)</li>
+                </ul>
+                <p>
+                    I obtained both my B.S. and my Ph.D. degree from the <a href="https://www.fdsm.fudan.edu.cn/AboutUs/department.html">Department of Statistics, Fudan University</a> in 2012 and 2017,
+                    supervised by Prof. <a href="https://www.fdsm.fudan.edu.cn/AboutUs/preview.html?uid=011916">Ming Zheng</a> and 
+                    Prof. <a href="https://www.fdsm.fudan.edu.cn/AboutUs/preview.html?uid=012077">Wen Yu</a>, working on semiparametric statistics and survival analysis.
+                </p>
+            </div>
+        </div>
 
-	<div class="page-header">
-	<h2 id="services" style="padding-top: 40px; margin-top:-60px;">services</h2>
-	Reviewing:  NeurIPS (2024(<strong>Top reviewer award</strong>), 2025), ICLR (2025, 2026), ICML (2025)
+        <div id="services">
+            <h2>Professional Services</h2>
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-pen-nib text-primary me-2"></i>Conference Reviewing</h5>
+                    <ul class="list-unstyled mt-3">
+                        <li><strong>NeurIPS:</strong> 2024 (<span class="badge bg-warning text-dark">Top Reviewer Award</span>), 2025</li>
+                        <li><strong>ICLR:</strong> 2025, 2026</li>
+                        <li><strong>ICML:</strong> 2025, 2026</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-      <!-- </p> -->
-	<div class="page-header">
-	<h2 id="research" style="padding-top: 40px; margin-top:
-	-60px;">preprints</h2>
-	<p>
-	  See also
-	  my <a href="https://scholar.google.com/citations?user=lvCtQUMAAAAJ"
-	  onclick="javascript:
-	  pageTracker._trackPageview(&#39;/out/google_scholar&#39;)">Google</a>
-	  scholar profiles.  
-	  <br>
-	  <ul>
+        <div id="research">
+            <h2>Research & Publications</h2>
+            
+            <p class="text-muted mb-4">
+                <sup>&#8224;</sup> denotes equal contribution. Default author ordering is alphabetical.
+            </p>
 
-		<li> <a href="https://arxiv.org/abs/2510.04051">
-			Toward a unified framework for data-efficient evaluation of large language models </a><br>
-			Lele Liao<sup><span>&#8224;</span></sup>, Qile Zhang<sup><span>&#8224;</span></sup>, Ruofan Wu<sup><span>&#8224;</span></sup>, Guanhua Fang
-			<br>
-			<br>
-		</li>
+            <h4 class="mt-4 mb-3 text-secondary">Preprints</h4>
+            <ul class="paper-list">
+                <li>
+                    <a href="https://arxiv.org/abs/2510.04051" class="paper-title">Toward a unified framework for data-efficient evaluation of large language models</a>
+                    <div class="author-list">Lele Liao<sup>&#8224;</sup>, Qile Zhang<sup>&#8224;</sup>, <strong>Ruofan Wu</strong><sup>&#8224;</sup>, Guanhua Fang</div>
+                </li>
+                <li>
+                    <a href="https://arxiv.org/abs/2507.22488" class="paper-title">Proto-EVFL: Enhanced Vertical Federated Learning via Dual Prototype with Extremely Unaligned Data</a>
+                    <div class="author-list">Wei Guo, Yiyang Duan, Zhaojun Hu, Yiqi Tong, Fuzhen Zhuang, Xiao Zhang, Jin Dong, <strong>Ruofan Wu</strong>, Tengfei Liu, Yifan Sun</div>
+                </li>
+                <li>
+                    <a href="https://arxiv.org/abs/2502.13562" class="paper-title">Are Large Language Models In-Context Graph Learners?</a>
+                    <div class="author-list">Jintang Li, <strong>Ruofan Wu</strong>, Yuchang Zhu, Huizhe Zhang, Liang Chen, Zibin Zheng</div>
+                </li>
+                <li>
+                    <a href="https://arxiv.org/abs/2410.10241" class="paper-title">Revisiting and Benchmarking Graph Autoencoders: A Contrastive Learning Perspective</a>
+                    <div class="author-list">Jintang Li, <strong>Ruofan Wu</strong>, Yuchang Zhu, Huizhe Zhang, Xinzhou Jin, Guibin Zhang, Zulun Zhu, Zibin Zheng, Liang Chen</div>
+                </li>
+                <li>
+                    <a href="https://arxiv.org/abs/2409.04101" class="paper-title">Ultra-imbalanced classification guided by statistical information</a>
+                    <div class="author-list">Yin Jin, Ningtao Wang, <strong>Ruofan Wu</strong>, Pengfei Shi, Xing Fu, Weiqiang Wang</div>
+                </li>
+                <li>
+                    <a href="https://arxiv.org/abs/2311.16605" class="paper-title">LasTGL: An Industrial Framework for Large-Scale Temporal Graph Learning</a>
+                    <div class="author-list">Jintang Li, Jiawang Dan, <strong>Ruofan Wu</strong>, Jing Zhou, Sheng Tian, Yunfei Liu, Baokun Wang, Changhua Meng, Weiqiang Wang, Yuchang Zhu, Liang Chen, Zibin Zheng</div>
+                </li>
+                <li>
+                    <a href="https://arxiv.org/abs/2306.02117" class="paper-title">Scaling Up, Scaling Deep: Blockwise Graph Contrastive Learning</a>
+                    <div class="author-list">Jintang Li, Wangbin Sun, <strong>Ruofan Wu</strong>, Yuchang Zhu, Liang Chen, Zibin Zheng</div>
+                </li>
+                <li>
+                    <a href="https://arxiv.org/abs/2305.10673" class="paper-title">Less Can Be More: Unsupervised Graph Pruning for Large-scale Dynamic Graphs</a>
+                    <div class="author-list">Jintang Li, Sheng Tian, <strong>Ruofan Wu</strong>, Liang Zhu, Welong Zhao, Changhua Meng, Liang Chen, Zibin Zheng, Hongzhi Yin</div>
+                </li>
+                <li>
+                    <a href="https://arxiv.org/abs/2206.10565" class="paper-title">sqSGD: Locally Private and Communication Efficient Federated Learning</a>
+                    <div class="author-list">Yan Feng, Tao Xiong, <strong>Ruofan Wu</strong>, LingJuan Lv, Leilei Shi</div>
+                </li>
+            </ul>
 
-		<li> <a href="https://arxiv.org/abs/2507.22488">
-			Proto-EVFL: Enhanced Vertical Federated Learning via Dual Prototype with Extremely Unaligned Data </a><br>
-			Wei Guo, Yiyang Duan, Zhaojun Hu, Yiqi Tong, Fuzhen Zhuang, Xiao Zhang, Jin Dong, Ruofan Wu, Tengfei Liu, Yifan Sun
-			<br>
-			<br>
-		</li>
+            <h4 class="mt-5 mb-3 text-secondary">Conference & Journal Papers</h4>
+            <ul class="paper-list">
+                <li>
+                    <a href="https://arxiv.org/abs/2505.11918" class="paper-title">Transformers as Unsupervised Learning Algorithms: A study on Gaussian Mixtures</a>
+                    <div class="author-list">Zhiheng Chen<sup>&#8224;</sup>, <strong>Ruofan Wu</strong><sup>&#8224;</sup>, Guanhua Fang</div>
+                    <div class="venue">International Conference on Learning Representations (ICLR), 2026</div>
+                </li>
+                <li>
+                    <a href="https://ieeexplore.ieee.org/abstract/document/11015097" class="paper-title">Heterophily-aware Representation Learning on Heterogenerous Graphs</a>
+                    <div class="author-list">Jintang Li, Zheng Wei, Yuchang Zhu, <strong>Ruofan Wu</strong>, Huizhe Zhang, Liang Chen, Zibin Zheng</div>
+                    <div class="venue">IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 47(9), 7852-7866, 2025</div>
+                </li>
+                <li>
+                    <a href="https://ieeexplore.ieee.org/abstract/document/10815075/" class="paper-title">Privacy Risks of Federated Knowledge Graph Embedding: New Membership Inference Attacks and Personalized Differential Privacy Defense</a>
+                    <div class="author-list">Yuke Hu, Yang Wang, Jian Lou, Wei Liang, <strong>Ruofan Wu</strong>, Weiqiang Wang, Xiaochen Li, Jinfei Liu, Zhan Qin</div>
+                    <div class="venue">IEEE Transactions on Dependable and Secure Computing, 22(3), 2788-2805, 2025</div>
+                </li>
+                <li>
+                    <a href="https://openreview.net/forum?id=Of4iNAIUSe" class="paper-title">Resource-Aware Federated Self-Supervised Learning with Global Class Representations</a>
+                    <div class="author-list">Mingyi Li, Xiao Zhang, Qi Wang, Tengfei Liu, <strong>Ruofan Wu</strong>, Weiqiang Wang, Fuzhen Zhuang, Hui Xiong, Dongxiao Yu</div>
+                    <div class="venue">Neural Information Processing Systems (NeurIPS), 2024</div>
+                </li>
+                <li>
+                    <a href="https://arxiv.org/abs/2406.00943" class="paper-title">State Space Models on Temporal Graphs: A First-Principles Study</a>
+                    <div class="author-list">Jintang Li<sup>&#8224;</sup>, <strong>Ruofan Wu</strong><sup>&#8224;</sup>, Xinzhou Jin, Boqun Ma, Liang Chen, Zibin Zheng</div>
+                    <div class="venue">Neural Information Processing Systems (NeurIPS), 2024</div>
+                </li>
+                <li>
+                    <a href="https://arxiv.org/abs/2402.04033" class="paper-title">On provable privacy vulnerabilities of graph representations</a>
+                    <div class="author-list"><strong>Ruofan Wu</strong><sup>&#8224;</sup>, Guanhua Fang<sup>&#8224;</sup>, Mingyang Zhang, Qiying Pan, Tengfei Liu, Weiqiang Wang</div>
+                    <div class="venue">Neural Information Processing Systems (NeurIPS), 2024</div>
+                </li>
+                <li>
+                    <a href="https://arxiv.org/abs/2406.14288" class="paper-title">Revisiting Modularity Maximization for Graph Clustering: A Contrastive Learning Perspective</a>
+                    <div class="author-list">Yunfei Liu, Jintang Li, Yuehe Chen, <strong>Ruofan Wu</strong>, Baokun Wang, Jing Zhou, Sheng Tian, Shuheng Shen, Xing Fu, Changhua Meng, Weiqiang Wang, Liang Chen</div>
+                    <div class="venue">SIGKDD Conference on Knowledge Discovery and Data Mining (KDD), 2024</div>
+                </li>
+                <li>
+                    <a href="https://arxiv.org/abs/2305.19306" class="paper-title">A Graph is Worth 1-bit Spikes: When Graph Contrastive Learning Meets Spiking Neural Networks</a>
+                    <div class="author-list">Jintang Li, Huizhe Zhang, <strong>Ruofan Wu</strong>, Zulun Zhu, Liang Chen, Zibin Zheng, Baokun Wang, Changhua Meng</div>
+                    <div class="venue">International Conference on Learning Representations (ICLR), 2024</div>
+                </li>
+                <li>
+                    <a href="https://arxiv.org/abs/2303.10358" class="paper-title">Neural Frailty Machine: Beyond proportional hazard assumption in neural survival regressions</a>
+                    <div class="author-list"><strong>Ruofan Wu</strong><sup>&#8224;</sup>, Jiawei Qiao<sup>&#8224;</sup>, Mingzhe Wu, Wen Yu, Ming Zheng, Tengfei Liu, Tianyi Zhang, Weiqiang Wang</div>
+                    <div class="venue">Neural Information Processing Systems (NeurIPS), 2023</div>
+                </li>
+                <li>
+                    <a href="https://dl.acm.org/doi/abs/10.1145/3583780.3614764" class="paper-title">A Momentum Loss Reweighting Method for Improving Recall</a>
+                    <div class="author-list">Chenzhi Jiang, Yin Jin, Ningtao Wang, <strong>Ruofan Wu</strong>, Xing Fu, Weiqiang Wang</div>
+                    <div class="venue">International Conference on Information & Knowledge Management (CIKM), 2023</div>
+                </li>
+                <li>
+                    <a href="https://arxiv.org/abs/2205.10053" class="paper-title">GUARD: Graph Universal Adversarial Defense</a>
+                    <div class="author-list">Jintang Li, Jie Liao, <strong>Ruofan Wu</strong>, Liang Chen, Jiawang Dan, Changhua Meng, Zibin Zheng, Weiqiang Wang</div>
+                    <div class="venue">International Conference on Information & Knowledge Management (CIKM), 2023</div>
+                </li>
+                <li>
+                    <a href="https://arxiv.org/abs/2205.10053" class="paper-title">What's Behind the Mask: Understanding Masked Graph Modeling for Graph Autoencoders</a>
+                    <div class="author-list">Jintang Li<sup>&#8224;</sup>, <strong>Ruofan Wu</strong><sup>&#8224;</sup>, Wangbin Sun, Liang Chen, Sheng Tian, Liang Zhu, Changhua Meng, Zibin Zheng, Weiqiang Wang</div>
+                    <div class="venue">SIGKDD Conference on Knowledge Discovery and Data Mining (KDD), 2023</div>
+                </li>
+                <li>
+                    <a href="https://arxiv.org/abs/2304.02932" class="paper-title">Quantifying and Defending against Privacy Threats on Federated Knowledge Graph Embedding</a>
+                    <div class="author-list">Yuke Hu, Wei Liang, <strong>Ruofan Wu</strong>, Kai Xiao, Weiqiang Wang, Xiaochen Li, Jingfei Liu, Zhan Qin</div>
+                    <div class="venue">International World Wide Web Conference (WWW), 2023 (<strong>Spotlight</strong>)</div>
+                </li>
+                <li>
+                    <a href="https://arxiv.org/abs/2302.02101" class="paper-title">Scaling Up Dynamic Graph Representation Learning via Spiking Neural Networks</a>
+                    <div class="author-list">Jintang Li, Zhouxin Yu, Zulun Zhu, Liang Chen, Qi Yu, Zibin Zheng, Sheng Tian, <strong>Ruofan Wu</strong>, Changhua Meng</div>
+                    <div class="venue">AAAI Conference on Artificial Intelligence (AAAI), 2023</div>
+                </li>
+                <li>
+                    <a href="https://arxiv.org/abs/2302.02101" class="paper-title">GRANDE: a neural model over directed multigraphs with application to anti-money laundering</a>
+                    <div class="author-list"><strong>Ruofan Wu</strong><sup>&#8224;</sup>, Boqun Ma<sup>&#8224;</sup>, Hong Jin, Wenlong Zhao, Weiqiang Wang, Tianyi Zhang</div>
+                    <div class="venue">International Conference on Data Mining (ICDM), 2022</div>
+                </li>
+                <li>
+                    <a href="https://dl.acm.org/doi/abs/10.1145/3534678.3539118" class="paper-title">Design Domain Specific Neural Network via Symbolic Testing</a>
+                    <div class="author-list">Hui Li<sup>&#8224;</sup>, Xing Fu<sup>&#8224;</sup>, <strong>Ruofan Wu</strong><sup>&#8224;</sup>, Kai Xiao, Xiaofu Chang, Weiqiang Wang, Shuai Chen, Leilei Shi, Tao Xiong, Yuan Qi</div>
+                    <div class="venue">SIGKDD Conference on Knowledge Discovery and Data Mining (KDD), 2022</div>
+                </li>
+                <li>
+                    <a href="https://dl.acm.org/doi/abs/10.1145/3459637.3482389" class="paper-title">Self-supervised Representation Learning on Dynamic Graphs</a>
+                    <div class="author-list">Sheng Tian<sup>&#8224;</sup>, <strong>Ruofan Wu</strong><sup>&#8224;</sup>, Leilei Shi, Liang Zhu, Tao Xiong</div>
+                    <div class="venue">International Conference on Information & Knowledge Management (CIKM), 2021</div>
+                </li>
+                <li>
+                    <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/poms.13395" class="paper-title">Can Social Notifications Help to Mitigate Payment Delinquency in Online Peer-to-Peer Lending?</a>
+                    <div class="author-list">Xianghua Lu, Tian Lu, Chong(Alex) Wang, <strong>Ruofan Wu</strong></div>
+                    <div class="venue">Production and Operations Management, 30(8), 2564-2585, 2021</div>
+                </li>
+                <li>
+                    <a href="https://link.springer.com/article/10.1007/s11749-017-0562-2" class="paper-title">Estimation and variable selection for semiparametric transformation models under a more efficient cohort sampling design</a>
+                    <div class="author-list">Mingzhe Wu, Ming Zheng, Wen Yu, <strong>Ruofan Wu</strong></div>
+                    <div class="venue">Test, 27, 570-596, 2018</div>
+                </li>
+                <li>
+                    <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/sjos.12213" class="paper-title">Subgroup analysis with time‐to‐event data under a logistic‐Cox mixture model</a>
+                    <div class="author-list"><strong>Ruofan Wu</strong>, Ming Zheng, Wen Yu</div>
+                    <div class="venue">Scandinavian Journal of Statistics, 43(3), 863-878, 2016</div>
+                </li>
+            </ul>
 
-		<li> <a href="https://arxiv.org/abs/2502.13562">
-			Are Large Language Models In-Context Graph Learners? </a><br>
-			Jintang Li, Ruofan Wu, Yuchang Zhu, Huizhe Zhang, Liang Chen, Zibin Zheng
-			<br>
-			<br>
-		</li>
+            <h4 class="mt-5 mb-3 text-secondary">Workshop Presentations</h4>
+            <ul class="paper-list">
+                <li>
+                    <a href="https://arxiv.org/abs/2310.20552" class="paper-title">Privacy-preserving design of graph neural networks with applications to vertical federated learning</a>
+                    <div class="author-list"><strong>Ruofan Wu</strong>, Mingyang Zhang, Lingjuan Lyu, Xiaolong Xu, Xiuquan Hao, Xinyi Fu, Tengfei Liu, Tianyi Zhang, Weiqiang Wang</div>
+                    <div class="venue">NeurIPS 2023 New Frontiers in Graph Learning Workshop (NeurIPS GLFrontiers 2023)</div>
+                </li>
+                <li>
+                    <a href="https://arxiv.org/abs/2309.09517" class="paper-title">FedGKD: Unleashing the Power of Collaboration in Federated Graph Neural Networks</a>
+                    <div class="author-list">Qiying Pan, <strong>Ruofan Wu</strong>, Tengfei Liu, Tianyi Zhang, Yifei Zhu, Weiqiang Wang</div>
+                    <div class="venue">NeurIPS 2023 New Frontiers in Graph Learning Workshop (NeurIPS GLFrontiers 2023)</div>
+                </li>
+                <li>
+                    <a href="https://arxiv.org/abs/2310.11281" class="paper-title">Self-supervision meets kernel graph neural models: From architecture to augmentations</a>
+                    <div class="author-list">Jiawang Dan<sup>&#8224;</sup>, <strong>Ruofan Wu</strong><sup>&#8224;</sup>, Yunpeng Liu, Baokun Wang, Changhua Meng, Tengfei Liu, Tianyi Zhang, Ningtao Wang, Xing Fu, Qi Li, Weiqiang Wang</div>
+                    <div class="venue">ICDM 2023 Machine Learning on Graph Workshop (ICDM MLoG 2023)</div>
+                </li>
+            </ul>
 
-		<li> <a href="https://arxiv.org/abs/2410.10241">
-			Revisiting and Benchmarking Graph Autoencoders: A Contrastive Learning Perspective </a><br>
-			Jintang Li, Ruofan Wu, Yuchang Zhu, Huizhe Zhang, Xinzhou Jin, Guibin Zhang, Zulun Zhu, Zibin Zheng, Liang Chen
-			<br>
-			<br>
-		</li>
+        </div>
+    </div> <footer>
+        <div class="container">
+            <p>&copy; 2026 Ruofan Wu. All rights reserved.</p>
+        </div>
+    </footer>
 
-		<li> <a href="https://arxiv.org/abs/2409.04101">
-			Ultra-imbalanced classification guided by statistical information </a><br>
-			Yin Jin, Ningtao Wang, Ruofan Wu, Pengfei Shi, Xing Fu, Weiqiang Wang
-			<br>
-			<br>
-		</li>
-
-		<li> <a href="https://arxiv.org/abs/2311.16605">
-			LasTGL: An Industrial Framework for Large-Scale Temporal Graph Learning </a><br>
-			Jintang Li, Jiawang Dan, Ruofan Wu, Jing Zhou, Sheng Tian, Yunfei Liu, Baokun Wang, Changhua Meng, Weiqiang Wang, Yuchang Zhu, Liang Chen, Zibin Zheng
-			<br>
-			<br>
-		</li>
-
-		<li> <a href="https://arxiv.org/abs/2306.02117">
-			Scaling Up, Scaling Deep: Blockwise Graph Contrastive Learning </a><br>
-			Jintang Li, Wangbin Sun, Ruofan Wu, Yuchang Zhu, Liang Chen, Zibin Zheng
-			<br>
-			<br>
-		</li>
-
-		<li> <a href="https://arxiv.org/abs/2305.10673">
-			Less Can Be More: Unsupervised Graph Pruning for Large-scale Dynamic Graphs </a><br>
-			Jintang Li, Sheng Tian, Ruofan Wu, Liang Zhu, Welong Zhao, Changhua Meng, Liang Chen, Zibin Zheng, Hongzhi Yin
-			<br>
-			<br>
-		</li>
-
-		<li> <a href="https://arxiv.org/abs/2206.10565">
-			sqSGD: Locally Private and Communication Efficient Federated Learning </a><br>
-			Yan Feng, Tao Xiong, Ruofan Wu, LingJuan Lv, Leilei Shi
-			<br>
-			<br>
-		</li>
-	</ul>
-	</p>
-    </div>
-
-    <div class="page-header">
-	<h2 id="research" style="padding-top: 40px; margin-top:
-	-60px;">conference & journal</h2>
-	<p>
-	  <!-- See also
-	  my <a href="https://scholar.google.com/citations?user=lvCtQUMAAAAJ"
-	  onclick="javascript:
-	  pageTracker._trackPageview(&#39;/out/google_scholar&#39;)">Google</a>
-	  scholar profiles.   -->
-	  <br>
-	  <ul>
-
-		<li> <a href="https://arxiv.org/abs/2505.11918">
-			Transformers as Unsupervised Learning Algorithms: A study on Gaussian Mixtures </a><br>
-			Zhiheng Chen<sup><span>&#8224;</span></sup>, Ruofan Wu<sup><span>&#8224;</span></sup>, Guanhua Fang
-			<br>
-			International Conference on Learning Representations (ICLR), 2026
-			<br>
-			<br>
-		</li>
-
-		<li> <a href="https://arxiv.org/abs/2310.11664">
-			Heterophily-aware Representation Learning on Heterogenerous Graphs </a><br>
-			Jintang Li, Zheng Wei, Yuchang Zhu, Ruofan Wu, Huizhe Zhang, Liang Chen, Zibin Zheng
-			<br>
-			IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2025+
-			<br>
-			<br>
-		</li>
-
-		<li> <a href="https://ieeexplore.ieee.org/abstract/document/10815075/">
-			Privacy Risks of Federated Knowledge Graph Embedding: New Membership Inference Attacks and Personalized Differential Privacy Defense </a><br>
-			Yuke Hu, Yang Wang, Jian Lou, Wei Liang, Ruofan Wu, Weiqiang Wang, Xiaochen Li, Jinfei Liu, Zhan Qin
-			<br>
-			IEEE Transactions on Dependable and Secure Computing, 22(3), 2788-2805, 2025
-			<br>
-			This is an extended version of <a href="https://arxiv.org/abs/2304.02932">
-				Quantifying and Defending against Privacy Threats on Federated Knowledge Graph Embedding </a>
-			<br>
-			<br>
-		</li>
-
-		<li> <a href="https://openreview.net/forum?id=Of4iNAIUSe">
-			Resource-Aware Federated Self-Supervised Learning with Global Class Representations </a><br>
-			Mingyi Li, Xiao Zhang, Qi Wang, Tengfei LIU, Ruofan Wu, Weiqiang Wang, Fuzhen Zhuang, Hui Xiong, Dongxiao Yu
-			<br>
-			Neural Information Processing Systems (NeurIPS), 2024
-			<br>
-			<br>
-		</li>
-
-		<li> <a href="https://arxiv.org/abs/2406.00943">
-			State Space Models on Temporal Graphs: A First-Principles Study </a><br>
-			Jintang Li<sup><span>&#8224;</span></sup>, Ruofan Wu<sup><span>&#8224;</span></sup>, Xinzhou Jin, Boqun Ma, Liang Chen, Zibin Zheng
-			<br>
-			Neural Information Processing Systems (NeurIPS), 2024
-			<br>
-			<br>
-		</li>
-
-		<li> <a href="https://arxiv.org/abs/2402.04033">
-			On provable privacy vulnerabilities of graph representations </a><br>
-			Ruofan Wu<sup><span>&#8224;</span></sup>,
-			<a href="https://sites.google.com/view/hyperfang2020/home">Guanhua Fang</a><sup><span>&#8224;</span></sup>,
-			Mingyang Zhang, Qiying Pan, Tengfei Liu, Weiqiang Wang
-			<br>
-			Neural Information Processing Systems (NeurIPS), 2024
-			<br>
-			<br>
-		</li>
-
-		<li> <a href="https://arxiv.org/abs/2406.14288">
-			Revisiting Modularity Maximization for Graph Clustering: A Contrastive Learning Perspective </a><br>
-			Yunfei Liu, Jintang Li, Yuehe Chen, Ruofan Wu, Baokun Wang, Jing Zhou, Sheng Tian, Shuheng Shen, Xing Fu, Changhua Meng, Weiqiang Wang, Liang Chen
-			<br>
-			SIGKDD Conference on Knowledge Discovery and Data Mining(KDD), 2024
-			<br>
-			<br>
-		</li>
-
-		<li> <a href="https://arxiv.org/abs/2305.19306">
-			A Graph is Worth 1-bit Spikes: When Graph Contrastive Learning Meets Spiking Neural Networks </a><br>
-			Jintang Li, Huizhe Zhang, Ruofan Wu, Zulun Zhu, Liang Chen, Zibin Zheng, Baokun Wang, Changhua Meng
-			<br>
-			International Conference on Learning Representations (ICLR), 2024
-			<br>
-			<br>
-		</li>
-
-		<li> <a href="https://arxiv.org/abs/2303.10358">
-			Neural Frailty Machine: Beyond proportional hazard assumption in neural survival regressions </a><br>
-			Ruofan Wu<sup><span>&#8224;</span></sup>, 
-			Jiawei Qiao<sup><span>&#8224;</span></sup>, 
-			Mingzhe Wu, 
-			<a href="https://www.fdsm.fudan.edu.cn/AboutUs/preview.html?uid=012077">Wen Yu</a>, 
-			<a href="https://www.fdsm.fudan.edu.cn/AboutUs/preview.html?uid=011916"> Ming Zheng</a>, 
-			Tengfei Liu, 
-			Tianyi Zhang, 
-			Weiqiang Wang
-			<br>
-			Neural Information Processing Systems (NeurIPS), 2023
-			<br>
-			<br>
-		</li>
-
-		<li> <a href="https://dl.acm.org/doi/abs/10.1145/3583780.3614764">
-			A Momentum Loss Reweighting Method for Improving Recall </a><br>
-			Chenzhi Jiang, Yin Jin, Ningtao Wang, Ruofan Wu, Xing Fu, Weiqiang Wang
-			<br>
-			International Conference on Information & Knowledge Management(CIKM), 2023
-			<br>
-			<br>
-		</li>
-		
-
-		<li> <a href="https://arxiv.org/abs/2205.10053">
-			GUARD: Graph Universal Adversarial Defense </a><br>
-			Jintang Li, Jie Liao, Ruofan Wu, Liang Chen, Jiawang Dan, Changhua Meng, Zibin Zheng, Weiqiang Wang
-			<br>
-			International Conference on Information & Knowledge Management(CIKM), 2023
-			<br>
-			<br>
-		</li>
-
-		<li> <a href="https://arxiv.org/abs/2205.10053">
-			What's Behind the Mask: Understanding Masked Graph Modeling for Graph Autoencoders </a><br>
-			Jintang Li<sup><span>&#8224;</span></sup>, 
-			Ruofan Wu<sup><span>&#8224;</span></sup>, 
-			Wangbin Sun, Liang Chen, Sheng Tian, Liang Zhu, Changhua Meng, Zibin Zheng, Weiqiang Wang
-			<br>
-			SIGKDD Conference on Knowledge Discovery and Data Mining(KDD), 2023
-			<br>
-			<br>
-		</li>
-
-		<li> <a href="https://arxiv.org/abs/2304.02932">
-			Quantifying and Defending against Privacy Threats on Federated Knowledge Graph Embedding </a><br>
-			Yuke Hu, Wei Liang, Ruofan Wu, Kai Xiao, Weiqiang Wang, Xiaochen Li, Jingfei Liu, Zhan Qin
-			<br>
-			International World Wide Web Conference(WWW), 2023 (<strong>Spotlight</strong>)
-			<br>
-			<br>
-		</li>
-
-		<li> <a href="https://arxiv.org/abs/2302.02101">
-			Scaling Up Dynamic Graph Representation Learning via Spiking Neural Networks </a><br>
-			Jintang Li, Zhouxin Yu, Zulun Zhu, Liang Chen, Qi Yu, Zibin Zheng, Sheng Tian, Ruofan Wu, Changhua Meng
-			<br>
-			AAAI Conference on Artificial Intelligence(AAAI), 2023
-			<br>
-			<br>
-		</li>
-
-		<li> <a href="https://arxiv.org/abs/2302.02101">
-			GRANDE: a neural model over directed multigraphs with application to anti-money laundering </a><br>
-			Ruofan Wu<sup><span>&#8224;</span></sup>,
-			Boqun Ma<sup><span>&#8224;</span></sup>,
-			Hong Jin,
-			Wenlong Zhao,
-			Weiqiang Wang,
-			Tianyi Zhang
-			<br>
-			International Conference on Data Mining (ICDM), 2022
-			<br>
-			<br>
-		</li>
-
-		<li> <a href="https://dl.acm.org/doi/abs/10.1145/3534678.3539118">
-			Design Domain Specific Neural Network via Symbolic Testing </a><br>
-			Hui Li<sup><span>&#8224;</span></sup>,
-			Xing Fu<sup><span>&#8224;</span></sup>,
-			Ruofan Wu<sup><span>&#8224;</span></sup>,
-			Kai Xiao, Xiaofu Chang, Weiqiang Wang, Shuai Chen, Leilei Shi, Tao Xiong, Yuan Qi
-			<br>
-			SIGKDD Conference on Knowledge Discovery and Data Mining(KDD), 2022
-			<br>
-			<br>
-		</li>
-
-		<li> <a href="https://dl.acm.org/doi/abs/10.1145/3459637.3482389">
-			Self-supervised Representation Learning on Dynamic Graphs </a><br>
-			Sheng Tian<sup><span>&#8224;</span></sup>,
-			Ruofan Wu<sup><span>&#8224;</span></sup>,
-			Leilei Shi,
-			Liang Zhu,
-			Tao Xiong
-			<br>
-			International Conference on Information & Knowledge Management(CIKM), 2021
-			<br>
-			<br>
-		</li>
-
-		<li> <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/poms.13395">
-			Can Social Notifications Help to Mitigate Payment Delinquency in Online Peer-to-Peer Lending? </a><br>
-			<a href="https://www.fdsm.fudan.edu.cn/AboutUs/preview.html?uid=012009"> Xianghua Lu</a>,
-			<a href="https://search.asu.edu/profile/4217075"> Tian Lu</a>,
-			<a href="https://en.gsm.pku.edu.cn/faculty/alexwang">Chong(Alex) Wang</a>,
-			Ruofan Wu,
-			<br>
-			Production and Operations Management, 30(8), 2564-2585, 2021
-			<br>
-			<br>
-		</li>
-
-		<li> <a href="https://link.springer.com/article/10.1007/s11749-017-0562-2">
-			Estimation and variable selection for semiparametric transformation models under a more efficient cohort sampling design </a><br>
-			Mingzhe Wu,
-			<a href="https://www.fdsm.fudan.edu.cn/AboutUs/preview.html?uid=011916"> Ming Zheng</a>,
-			<a href="https://www.fdsm.fudan.edu.cn/AboutUs/preview.html?uid=012077">Wen Yu</a>,
-			Ruofan Wu,
-			<br>
-			Test, 27, 570-596, 2018
-			<br>
-			<br>
-		</li>
-
-	    <li> <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/sjos.12213">
-		  Subgroup analysis with time‐to‐event data under a logistic‐Cox mixture model </a><br>
-		      Ruofan Wu,
-	      <a href="https://www.fdsm.fudan.edu.cn/AboutUs/preview.html?uid=011916"> Ming Zheng</a>,
-	      <a href="https://www.fdsm.fudan.edu.cn/AboutUs/preview.html?uid=012077">Wen Yu</a>
-	      <br>
-	      Scandinavian journal of statistics, 43(3), 863-878, 2016
-	      <br>
-	      <br>
-	    </li>
-	</ul>
-	</p>
-	<br>
-    </div>
-
-	<div class="page-header">
-		<h2 id="research" style="padding-top: 40px; margin-top:
-		-60px;">workshop presentations</h2>
-		<p>
-		  <br>
-		  <ul>
-
-			<li> <a href="https://arxiv.org/abs/2310.20552">
-				Privacy-preserving design of graph neural networks with applications to vertical federated learning </a><br>
-				Ruofan Wu, Mingyang Zhang, Lingjuan Lyu, Xiaolong Xu, Xiuquan Hao, Xinyi Fu, Tengfei Liu, Tianyi Zhang, Weiqiang Wang
-				<br>
-				NeurIPS 2023 New Frontiers in Graph Learning Workshop (NeurIPS GLFrontiers 2023)
-				<br>
-				<br>
-			</li>
-	
-			<li> <a href="https://arxiv.org/abs/2309.09517">
-				FedGKD: Unleashing the Power of Collaboration in Federated Graph Neural Networks </a><br>
-				Qiying Pan, Ruofan Wu, Tengfei Liu, Tianyi Zhang, Yifei Zhu, Weiqiang Wang
-				<br>
-				NeurIPS 2023 New Frontiers in Graph Learning Workshop (NeurIPS GLFrontiers 2023)
-				<br>
-				<br>
-			</li>
-	
-			<li> <a href="https://arxiv.org/abs/2310.11281">
-				Self-supervision meets kernel graph neural models: From architecture to augmentations </a><br>
-				Jiawang Dan<sup><span>&#8224;</span></sup>, Ruofan Wu<sup><span>&#8224;</span></sup>,
-				Yunpeng Liu, Baokun Wang, Changhua Meng, Tengfei Liu, Tianyi Zhang, Ningtao Wang, Xing Fu, Qi Li, Weiqiang Wang
-				<br>
-				ICDM 2023 Machine Learning on Graph Workshop (ICDM MLoG 2023)
-				<br>
-				<br>
-			</li>
-		</ul>
-		</p>
-	<br>	
-	Default author ordering is alphabetical, and
-	<sup><span>&#8224;</span></sup> denotes equal contribution.
-	</div>
-
-    </div> <!-- /container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="./css/jquery.min.js"></script>
-    <script src="./css/bootstrap.min.js"></script>
-  
-
-</body></html>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
